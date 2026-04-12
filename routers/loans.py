@@ -60,7 +60,7 @@ def create_loan(payload: LoanCreate, db: Session = Depends(get_db)):
 
 @router.get("/")
 def get_loans(user_id: str, db: Session = Depends(get_db)):
-    return db.query(Loan).filter(Loan.user_id == user_id).all()
+    return db.query(Loan).filter(Loan.user_id == uuid.UUID(user_id)).all()
 
 
 @router.get("/{loan_id}/schedule")

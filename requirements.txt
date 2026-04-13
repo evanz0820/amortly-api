@@ -1,5 +1,5 @@
-fastapi
-uvicorn
+fastapi[standard]
+uvicorn[standard]
 sqlalchemy
 psycopg2-binary
 stripe
